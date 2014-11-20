@@ -11,9 +11,9 @@ You pour your blood sweat and tears into this interface that bares your company/
 
 ## Using APIs is hard.
 
-As an app developer you're trying to take someone elses product and somehow integrate it into whatever vision that you've got in your head.  Whether it's simply getting a list of things from another service (such as embedding a reading list) or full on wrapping your entire product around another product (using Amazon S3 as your primary binary storage mechanism for example) you have a lot of things to reconsile.
+As an app developer you're trying to take someone else's product and somehow integrate it into whatever vision that you've got in your head.  Whether it's simply getting a list of things from another service (such as embedding a reading list) or full on wrapping your entire product around another product (using Amazon S3 as your primary binary storage mechanism for example) you have a lot of things to reconcile.
 
-You have your own programming language (or more likely languages) that you're using. The use case you have in mind.  The use cases the remote devs had in mind for the API. The programming language they used to create the API (and that they used to test it). And the encoding or representation of the data and its limitations.  Reconsiling all of the slight (or major) differences between these things is a real challenge some times -- despite years of attempts at best practices and industry standards things just don't always fit together like we pretend that they will.
+You have your own programming language (or more likely languages) that you're using. The use case you have in mind.  The use cases the remote devs had in mind for the API. The programming language they used to create the API (and that they used to test it). And the encoding or representation of the data and its limitations.  Reconciling all of the slight (or major) differences between these things is a real challenge some times -- despite years of attempts at best practices and industry standards things just don't always fit together like we pretend that they will.
 
 As a developer providing an API it's important to remember three things.  It's actually of varying levels of importance to remember a lot of things but these three things are more universal than most.
 
@@ -23,7 +23,7 @@ Unless you're developing a completely internal API you're hoping that the world 
 
 ### #2 You have no control over what tools those people are using.
 
-Are you using a language that has little or no variable type enforcement? Some people aren't.  Some of those people still want to use your product.  Did you come up with your own way of doing things which requires custom code to do things that there are already widely adopted intustry standards (and thus widely deployed and battle tested libraries in many languages)? Did that cause you to release a client in your own language (how about clojure, how about erlang, how about c++, how about perl, how about [...]) (Who do you expect to do this work)?
+Are you using a language that has little or no variable type enforcement? Some people aren't.  Some of those people still want to use your product.  Did you come up with your own way of doing things which requires custom code to do things that there are already widely adopted intustry standards (and thus widely deployed and battle tested libraries in many languages)? Did that cause you to release a client in your own language (how about Clojure, how about Erlang, how about C++, how about Perl, how about [...]) (Who do you expect to do this work)?
 
 ### #3 Your API is a promise.
 
@@ -44,7 +44,7 @@ Lets take a look at a completely hypothetical situation.
 3. John has an app written in a strongly typed language which works around this by defining success as an integer type instead of a boolean type.  Because john was busy and never got around to letting you know. Or maybe john never knew because he simply introspected your API and worked backwards from the responses that you gave. Now johns app has 100k users depending on this functionality
 4. Mary is writing an app, and because Mary doesn't like to play fast and loose (and also Mary doesn't want her app to break later on) she submits an issue pointing out that you are returning the wrong type.
 
-Now at this point you are trapped.  The existing user base (and by extension their userbase) is comitted to integers.  And you only have 4 options.
+Now at this point you are trapped.  The existing user base (and by extension their userbase) is committed to integers.  And you only have 4 options.
 
 1. You can break 100k people all at once and cripple an existing and deployed application.
 2. You can version your API -- an entire new version to correct what should be a boolean value!
