@@ -1,4 +1,6 @@
 ---
+layout: post
+title: On API Correctness
 ---
 
 # On API Correctness
